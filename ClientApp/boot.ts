@@ -6,7 +6,8 @@ import "bootstrap";
 declare const IS_DEV_BUILD: boolean; // The value is supplied by Webpack during the build
 
 export function configure(aurelia: Aurelia) {
-    aurelia.use.standardConfiguration();
+    aurelia.use.standardConfiguration()
+        .globalResources(PLATFORM.moduleName('app/components/app/terminology-value-converter'));
 
     if (IS_DEV_BUILD) {
         aurelia.use.developmentLogging();
